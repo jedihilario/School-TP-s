@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from .show import show_menu
 from .upload import upload_menu
+from.search import search_menu
 from db.query import Query
 from models.persona import Persona
 
@@ -29,7 +30,7 @@ def main_menu (window_name: str = 'Default', window_res: str = '720x360'):
     title = ttk.Label(frm, font=('Helvetica', 28), text='Programa ardo de personas').pack(pady = 4)
     update = ttk.Button(frm, text = 'Cargar', command = lambda: upload_menu(root, people_list)).pack(pady = 4);
     show_button = ttk.Button(frm, text = 'Mostrar', command = lambda: show_menu(root, people_list)).pack(pady = 4)
-    search_button = ttk.Button(frm, text = 'Buscar', command = lambda: print('Search')).pack(pady = 4)
+    search_button = ttk.Button(frm, text = 'Buscar', command = lambda: search_menu(root, people_list)).pack(pady = 4)
     delete_button = ttk.Button(frm, text = 'Eliminar / Modificar', command = lambda: print('Delete/modify')).pack(pady = 4)
     quit_button = ttk.Button(frm, text = 'Salir', command = lambda: on_quit(root, people_list)).pack(pady = 4)
 
