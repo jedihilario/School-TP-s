@@ -12,9 +12,13 @@ def on_quit (window: Tk, people: list[Persona]):
 
     window.destroy()
 
-def main_menu (window_name: str = 'Default', window_res: str = '720x360'):
+def main_menu (window_name: str = 'Default', window_res: list[int] = [720, 360]):
     root = Tk()
-    root.geometry(window_res)
+    width = window_res[0]
+    height = window_res[1]
+    x = (root.winfo_screenwidth() // 2) - (width // 2)
+    y = ((root.winfo_screenheight() // 2) - (height // 2)) - 80
+    root.geometry(f'{width}x{height}+{x}+{y}')
     root.title(window_name)
     root.bind('<Escape>', lambda: root.destroy())
 
