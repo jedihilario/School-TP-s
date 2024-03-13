@@ -10,8 +10,8 @@ def modify (people: list[Persona], dni: int, new_data: map, op_var: StringVar) -
 
     if (new_data['name'] == ''): new_data['name'] = people[index].name
     if (new_data['surname'] == ''): new_data['surname'] = people[index].surname
-    if (new_data['dni'] == ''): new_data['dni'] = people[index].dni
-    if (new_data['age'] == ''): new_data['age'] = people[index].age
+    if (new_data['dni'] == 0): new_data['dni'] = people[index].dni
+    if (new_data['age'] == 0): new_data['age'] = people[index].age
 
     people[index].name = new_data['name']
     people[index].surname = new_data['surname']
