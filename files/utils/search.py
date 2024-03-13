@@ -2,7 +2,7 @@ from models.persona import Persona
 
 def search_by_name (people: list[Persona], name: str) -> list[str, int]:
     result: list[str, int] = ['Resultado:\n', 0]
-    name = name.upper()
+    name = name.upper().strip()
 
     for i, person in enumerate(people):
         if (person.name == name):

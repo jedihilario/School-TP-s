@@ -4,7 +4,7 @@ from models.persona import Persona
 
 def add_person (window: Toplevel, people_list: list[Persona], new_data: map):
     people_list.append(Persona(
-        new_data['name'].upper(), new_data['surname'].upper(), new_data['dni'], new_data['age']
+        new_data['name'].upper().strip(), new_data['surname'].upper().strip(), new_data['dni'], new_data['age']
     ))
 
     window.destroy()
