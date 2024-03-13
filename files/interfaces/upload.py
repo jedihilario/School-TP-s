@@ -11,8 +11,13 @@ def add_person (window: Toplevel, people_list: list[Persona], new_data: map):
 
 def check (window: Toplevel, people_list: list[Persona], new_data: map, err_msg: StringVar) -> None:
     try:
+        if (new_data['name'].get() == '' or new_data['surname'].get() == ''): raise Exception()
+        if (new_data['dni'].get() < 0 or new_data['age'].get() < 0): raise Exception()
         add_person(window, people_list, {
-            'name': new_data['name'].get(), 'surname': new_data['surname'].get(), 'dni': new_data['dni'].get(), 'age': new_data['age'].get()
+            'name': new_data['name'].get(),
+            'surname': new_data['surname'].get(),
+            'dni': new_data['dni'].get(),
+            'age': new_data['age'].get()
         })
     except:
         err_msg.set('Error: Datos invalidos')

@@ -10,6 +10,8 @@ def modify (people: list[Persona], dni: IntVar, new_data: map, op_var: StringVar
         new_data['surname'] = new_data['surname'].get()
         new_data['dni'] = new_data['dni'].get()
         new_data['age'] = new_data['age'].get()
+
+        if (new_data['dni'] < 0 or new_data['age'] < 0): raise Exception()
     except:
         op_var.set('Error: Datos invalidos'); return
     
