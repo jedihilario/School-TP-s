@@ -13,6 +13,7 @@ def check (window: Toplevel, people_list: list[Persona], new_data: map, err_msg:
     try:
         if (new_data['name'].get() == '' or new_data['surname'].get() == ''): raise Exception()
         if (new_data['dni'].get() < 0 or new_data['age'].get() < 0): raise Exception()
+        if ((not new_data['name'].get().isalnum()) or (not new_data['surname'].get().isalnum())): raise Exception()
         add_person(window, people_list, {
             'name': new_data['name'].get(),
             'surname': new_data['surname'].get(),
