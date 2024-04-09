@@ -14,7 +14,7 @@ sumSquares :: ([Int] -> [Int]) -> [Int] -> Int
 sumSquares sq xs = foldl (+) 0 (sq (filter even xs))
 
 isPrime :: Int -> Bool
-isPrime x = _prime x (x - 1) where 
+isPrime x = _prime x (x `div` 2) where 
     _prime :: Int -> Int -> Bool
     _prime _ 1 = True
     _prime 1 _ = True
@@ -33,5 +33,5 @@ main = do
     print (areEven [2, 4, 6, 8]) -- True
     print (areEven [1, 4, 6, 8]) -- False
     print(sumSquares squareList [1, 2, 3, 4]) -- 4 + 16 = 20
-    print(nPrimes 5) -- 1, 2, 3, 5, 7
+    print(nPrimes 10) -- 1, 2, 3, 5, 7
     print(csLists [1 ,3, 5, 7] [2, 4, 6, 8]) -- [1 2, 3, 4, 5, 6, 7, 8]
