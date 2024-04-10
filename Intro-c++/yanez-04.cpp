@@ -6,9 +6,9 @@ int main () {
     int n;
     cout << "Ingresa un numero: "; cin >> n;
 
-    cout << "La tabla del " << n << "es:\n";
+    cout << "La tabla del " << n << " es:\n";
     for (int i = 1; i < 11; i++) {
-        cout << n * i;
+        cout << n * i << "\n";
     }
 
     return 0;
