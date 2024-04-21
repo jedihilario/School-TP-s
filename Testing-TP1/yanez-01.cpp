@@ -4,7 +4,7 @@
 
 using namespace std;
 
-float area (int b, int h) {
+float area_triangle (int b, int h) {
     return ((float) b * (float) h / 2);
 }
 
@@ -31,9 +31,11 @@ string concat (string a, string b) {
     return a + b;
 }
 
-int main () {
+void test () {
     // Ej. 1
-    assert(area(2, 2) == 2.0);
+    assert(area_triangle(2, 2) == 2.0);
+    assert(area_triangle(2, 5) == 5.0);
+    assert(area_triangle(3, 7) == 10.5);
     // Ej. 2
     assert(isEven(2));
     assert(!isEven(3));
@@ -46,6 +48,10 @@ int main () {
     assert(concat("Hola ", "Mundo") == "Hola Mundo");
 
     cout << "Todos los test pasaron!!\n";
+}
+
+int main () {
+    test();
 
     return 0;
 }
